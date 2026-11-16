@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STRIKEFORCE: Tactical Arena</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game"></canvas>
+
+  <div id="menu" class="screen">
+    <h1 class="logo">STRIKE<span>FORCE</span></h1>
+    <p class="sub">Tactical Arena</p>
+    <nav class="list">
+      <button class="btn" data-action="campaign">Play Campaign</button>
+      <button class="btn" data-action="survival">Survival Mode</button>
+      <button class="btn" data-action="timeattack">Time Attack</button>
+      <button class="btn" data-action="training">Training Mode</button>
+      <button class="btn" data-action="weapons">Weapon Selection</button>
+      <button class="btn" data-action="settings">Settings</button>
+      <button class="btn" data-action="instructions">Instructions</button>
+      <button class="btn" data-action="leaderboard">Leaderboard</button>
+    </nav>
+    <p class="best" id="best"></p>
+  </div>
+
+  <div id="campaign" class="screen" hidden>
+    <h2>Campaign</h2>
+    <div id="level-list" class="list"></div>
+    <button class="btn small" data-action="back">Back</button>
+  </div>
+
+  <div id="weapons" class="screen" hidden>
+    <h2>Weapon Selection</h2>
+    <p class="note">Pick the weapon you start with. Unlock more by clearing campaign missions.</p>
+    <div id="weapon-list" class="cards"></div>
+    <button class="btn small" data-action="back">Back</button>
+  </div>
+
+  <div id="settings" class="screen" hidden>
+    <h2>Settings</h2>
+    <label class="row">Music volume <input id="music-vol" type="range" min="0" max="100"></label>
+    <label class="row">Sound effects <input id="sfx-vol" type="range" min="0" max="100"></label>
+    <button class="btn small danger" data-action="reset">Reset saved progress</button>
+    <button class="btn small" data-action="back">Back</button>
+  </div>
+
+  <div id="instructions" class="screen" hidden>
+    <h2>Instructions</h2>
+    <table class="keys">
+      <tr><td>W A S D / Arrows</td><td>Move</td></tr>
+      <tr><td>Mouse</td><td>Aim</td></tr>
+      <tr><td>Left mouse button</td><td>Shoot (hold to keep firing)</td></tr>
+      <tr><td>R</td><td>Reload</td></tr>
+      <tr><td>1 2 3 4</td><td>Pistol, Rifle, Shotgun, Sniper (if unlocked)</td></tr>
+      <tr><td>G</td><td>Throw grenade</td></tr>
+      <tr><td>Esc</td><td>Pause</td></tr>
+    </table>
+    <p class="note">Green crosses heal you. Orange boxes give ammo and a grenade. You have 3 lives.</p>
+    <button class="btn small" data-action="back">Back</button>
+  </div>
+
+  <div id="leaderboard" class="screen" hidden>
+    <h2>Leaderboard</h2>
+    <ol id="score-list" class="scores"></ol>
+    <button class="btn small" data-action="back">Back</button>
+  </div>
+
+  <div id="pause" class="screen" hidden>
+    <h2>Paused</h2>
+    <nav class="list">
+      <button class="btn" data-action="resume">Resume</button>
+      <button class="btn" data-action="restart">Restart</button>
+      <button class="btn" data-action="quit">Quit to menu</button>
+    </nav>
+  </div>
+
+  <div id="end" class="screen" hidden>
+    <h2 id="end-title"></h2>
+    <ul id="end-stats" class="stats"></ul>
+    <div id="end-actions" class="list"></div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/weapons.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/game.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

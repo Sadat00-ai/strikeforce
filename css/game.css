@@ -1,0 +1,16 @@
+/* The play area: a 960x600 canvas scaled to fit the window */
+#stage {
+  position: relative;
+  width: min(100vw, 160vh);
+  aspect-ratio: 16 / 10;
+  background: #000;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#game.playing { cursor: none; }

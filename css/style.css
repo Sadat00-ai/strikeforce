@@ -1,0 +1,29 @@
+/* Base styles and colors for STRIKEFORCE */
+:root {
+  --coal: #121510;
+  --panel: #1b2016;
+  --olive: #4b5a2c;
+  --green: #8aa05a;
+  --orange: #e8892b;
+  --red: #c9362b;
+  --text: #e6e9dc;
+  --muted: #98a089;
+  --heading: "Bahnschrift", "Arial Narrow", Impact, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--coal);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  overflow: hidden;
+}
+
+[hidden] { display: none !important; }
+
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
